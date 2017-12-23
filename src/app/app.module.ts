@@ -8,6 +8,7 @@ import { NavbarComponent } from './admin/layout/navbar/navbar.component';
 import { SidebarComponent } from './admin/layout/sidebar/sidebar.component';
 import { FooterComponent } from './admin/layout/footer/footer.component';
 import { CategoryComponent } from './admin/category/category.component';
+import { ProductComponent } from './admin/product/product.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CategoryComponent } from './admin/category/category.component';
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
-    CategoryComponent
+    CategoryComponent,
+    ProductComponent
   ],
   imports: [
     RoutingModule,

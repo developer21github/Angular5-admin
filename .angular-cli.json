@@ -27,7 +27,8 @@
         "assets/css/morris/morris.css",
         "assets/css/datepicker/datepicker3.css",
         "assets/css/daterangepicker/daterangepicker.css",
-        "assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"
+        "assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css",
+        "../node_modules/ngx-toastr/toastr.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

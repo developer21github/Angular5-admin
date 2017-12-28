@@ -17,7 +17,7 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Product</h3>
                     </div>
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" name="productForm" #productForm="ngForm">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="txtName" class="col-sm-2 control-label">Name</label>
@@ -64,10 +64,8 @@
                             </div>
                         </div>
                         <div class="box-footer">
-                            <button type="submit" (click)="addProduct(product)" class="btn btn-info pull-right">Save</button>
-                            <button type="submit" style="margin-right: 15px;" class="btn btn-default pull-right">
-                                Cancel
-                            </button>
+                            <button type="submit" [disabled]="!productForm.valid" (click)="addProduct(product)" class="btn btn-info pull-right">Save</button>
+                            <button type="submit" style="margin-right: 15px;" class="btn btn-default pull-right">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -75,7 +73,6 @@
         </div>
     </section>
 </div>
-
 <script>
     $(function () {
         $("#example1").DataTable();

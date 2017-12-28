@@ -56,4 +56,6 @@ import { LoginComponent } from './admin/login/login.component';
   providers: [ProductService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

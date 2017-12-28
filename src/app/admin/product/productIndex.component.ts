@@ -28,7 +28,6 @@ export class ProductIndexComponent {
     getProduct() {
         this.productService.getProduct().subscribe(res => {
                 this.products = res;
-                console.log(res);
             },
             error => console.log(error)
         );

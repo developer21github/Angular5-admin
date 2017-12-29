@@ -21,6 +21,7 @@ import { ProfileComponent } from './admin/profile/profile.component';
 import { ProductService } from './admin/product/product.service';
 import { ProductIndexComponent } from './admin/product/productIndex.component';
 import { LoginComponent } from './admin/login/login.component';
+import { LocalStorage } from './storage.service';
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import { LoginComponent } from './admin/login/login.component';
       progressBar: true,
     }),
   ],
-  providers: [ProductService],
+  providers: [ProductService, LocalStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
+import {LocalStorage} from '../../storage.service';
 
 @Component({
     selector: 'app-login',
@@ -12,13 +13,18 @@ export class LoginComponent implements OnInit {
     username = 'admin';
     password = 'admin';
 
-    constructor(private router: Router) {}
+    constructor(private router: Router,
+                private localStorage: LocalStorage) {
+    }
 
-    ngOnInit() {}
+    ngOnInit() {
+    }
 
     logins(login) {
-        if (login.username == this.username && login.password == this.password) {
+        if (login.username === this.username && login.password === this.password) {
+            this.localStorage.SetStorage(login);
             this.router.navigate(['/home']);
+           // console.log(this.localStorage.getStorage());
             location.reload(true);
         }
     }

@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 export class ProductComponent implements OnInit {
 
 
-    product = {};
+    product:any={};
 
     constructor(private toastr: ToastrService,
                 private productService: ProductService,
@@ -28,5 +28,9 @@ export class ProductComponent implements OnInit {
             },
             error => console.log(error)
         );
+    }
+
+    cancelProduct(){
+        this.router.navigateByUrl('/product/index-product');
     }
 }

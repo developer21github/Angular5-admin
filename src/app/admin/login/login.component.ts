@@ -9,7 +9,7 @@ import {LocalStorage} from '../../storage.service';
 })
 export class LoginComponent implements OnInit {
 
-    login = {};
+    login: any = {};
     username = 'admin';
     password = 'admin';
 
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
         if (login.username === this.username && login.password === this.password) {
             this.localStorage.SetStorage(login);
             this.router.navigate(['/home']);
-           // console.log(this.localStorage.getStorage());
+            // console.log(this.localStorage.getStorage());
             location.reload(true);
         }
     }

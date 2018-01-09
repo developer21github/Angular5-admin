@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  profile:any={};
   constructor() { }
 
   ngOnInit() {
   }
 
+  addProfile(){
+
+  }
 }

@@ -5,27 +5,27 @@ import * as morgan from 'morgan';
 import * as mongoose from 'mongoose';
 import * as path from 'path';
 
-import setRoutes from './routes';
+import setRoutes from './routes/route.index';
 
 const app = express();
 dotenv.load({ path: '.env' });
-app.set('port', (process.env.PORT || 3000));
-
+app.set('port', (4040 || 3030));
+console.log('Connected to MongoDB on', 4040);
 app.use('/', express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 let mongodbURI;
 if (process.env.NODE_ENV === 'test') {
-    mongodbURI = process.env.MONGODB_TEST_URI;
+    mongodbURI = 'mongodb://localhost:27017/test';
 } else {
-    mongodbURI = process.env.MONGODB_URI;
+    mongodbURI = 'mongodb://localhost:27017/test';
     app.use(morgan('dev'));
 }
 
 mongoose.Promise = global.Promise;
-const mongodb = mongoose.connect(mongodbURI, { useMongoClient: true });
-
+const mongodb = mongoose.connect(mongodbURI);
+console.log('Connected to MongoDB on', mongodb);
+setRoutes(app);
 mongodb
     .then((db) => {
         console.log('Connected to MongoDB on', db.host + ':' + db.port);

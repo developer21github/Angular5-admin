@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
                     this.loginT = false;
                 }
             } else {
-                this.herf = 'home'
+                this.router.navigate(['/login']);
             }
         });
     }
